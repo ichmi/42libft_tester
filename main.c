@@ -6,11 +6,11 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/16 14:51:59 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/16 15:59:30 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include "../libft.h"
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -3012,7 +3012,7 @@ void	test_ft_putnbr_fd()
 	lseek(fd, SEEK_SET, 0);
 	read(fd, buff, 12);
 	if(strcmp(buff, "-2147483648") == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
+		printf("OK\n");
 	else
 		printf("KO\n");
 	unlink("./test_putnbr");
@@ -3028,45 +3028,42 @@ void	test_ft_putnbr_fd()
 
 int		main()
 {
-	// test_ft_isalpha();
-	// test_ft_isdigit();
-	// test_ft_isalnum();
-	// test_ft_isascii();
-	// test_ft_isprint();
-	// test_ft_strlen();
-	// test_ft_toupper();
-	// test_ft_tolower();
-	// test_ft_strchr();
-	// test_ft_strrchr();
-	// test_ft_strncmp();
-	// test_ft_memchr();
-	// test_ft_memcmp();
-	// test_ft_memcpy();
-	// test_ft_memmove();
-	// test_ft_memset();
-	// test_ft_bzero();
-	// test_ft_strlcpy();
-	// test_ft_strlcat();
-	// test_ft_strnstr();
-	// test_ft_atoi();
-	// test_ft_calloc();
-	// test_ft_strdup();
-	// test_ft_substr();
-	// test_ft_strjoin();
-	// test_ft_strtrim();
-	// test_ft_split();
-	// test_ft_itoa();
-	// test_ft_strmapi();
-	// test_ft_striteri();
+	test_ft_isalpha();
+	test_ft_isdigit();
+	test_ft_isalnum();
+	test_ft_isascii();
+	test_ft_isprint();
+	test_ft_strlen();
+	test_ft_toupper();
+	test_ft_tolower();
+	test_ft_strchr();
+	test_ft_strrchr();
+	test_ft_strncmp();
+	test_ft_memchr();
+	test_ft_memcmp();
+	test_ft_memcpy();
+	test_ft_memmove();
+	test_ft_memset();
+	test_ft_bzero();
+	test_ft_strlcpy();
+	test_ft_strlcat();
+	test_ft_strnstr();
+	test_ft_atoi();
+	test_ft_calloc();
+	test_ft_strdup();
+	test_ft_substr();
+	test_ft_strjoin();
+	test_ft_strtrim();
+	test_ft_split();
+	test_ft_itoa();
+	test_ft_strmapi();
+	test_ft_striteri();
 
 	// Doesnt work w/Workspace env
 	// test_ft_putchar_fd();
 	// test_ft_putstr_fd();
 	// test_ft_putendl_fd();
 	// test_ft_putnbr_fd();
-
-	// Bonus
-
 
 	return (0);
 }
