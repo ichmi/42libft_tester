@@ -6,7 +6,7 @@
 /*   By: frosa-ma <git.ichmi@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/18 20:19:32 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/18 21:11:05 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2751,7 +2751,7 @@ void	test_ft_putchar_fd()
 	char	*str = (char *)calloc(11, sizeof(char));
 
 	printf("Test 1: ");
-	fd = open("test_putchar", O_RDWR | O_CREAT);
+	fd = open("test_putchar", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "4");
 	ft_putchar_fd('4', fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2765,7 +2765,7 @@ void	test_ft_putchar_fd()
 	memset(str, 0, strlen(str));
 
 	printf("Test 2: ");
-	fd = open("test_putchar", O_RDWR | O_CREAT);
+	fd = open("test_putchar", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "F");
 	ft_putchar_fd('F', fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2779,7 +2779,7 @@ void	test_ft_putchar_fd()
 	memset(str, 0, strlen(str));
 
 	printf("Test 3: ");
-	fd = open("test_putchar", O_RDWR | O_CREAT);
+	fd = open("test_putchar", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "\t");
 	ft_putchar_fd('\t', fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2815,7 +2815,7 @@ void	test_ft_putstr_fd()
 	char	*str = (char *)calloc(11, sizeof(char));
 
 	printf("Test 1: ");
-	fd = open("test_putstr", O_RDWR | O_CREAT);
+	fd = open("test_putstr", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "Light");
 	ft_putstr_fd(str, fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2829,7 +2829,7 @@ void	test_ft_putstr_fd()
 	memset(str, 0, strlen(str));
 
 	printf("Test 2: ");
-	fd = open("test_putstr", O_RDWR | O_CREAT);
+	fd = open("test_putstr", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "Lonely");
 	ft_putstr_fd(str, fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2843,7 +2843,7 @@ void	test_ft_putstr_fd()
 	memset(str, 0, strlen(str));
 
 	printf("Test 3: ");
-	fd = open("test_putstr", O_RDWR | O_CREAT);
+	fd = open("test_putstr", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "intro_III");
 	ft_putstr_fd(str, fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2879,7 +2879,7 @@ void	test_ft_putendl_fd()
 	char	*str = (char *)calloc(30, sizeof(char));
 
 	printf("Test 1: ");
-	fd = open("test_putendl", O_RDWR | O_CREAT);
+	fd = open("test_putendl", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "Light");
 	ft_putendl_fd(str, fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2893,7 +2893,7 @@ void	test_ft_putendl_fd()
 	memset(str, 0, strlen(str));
 
 	printf("Test 2: ");
-	fd = open("test_putendl", O_RDWR | O_CREAT);
+	fd = open("test_putendl", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "42");
 	ft_putendl_fd(str, fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2907,7 +2907,7 @@ void	test_ft_putendl_fd()
 	memset(str, 0, strlen(str));
 
 	printf("Test 3: ");
-	fd = open("test_putendl", O_RDWR | O_CREAT);
+	fd = open("test_putendl", O_RDWR | O_CREAT, 00777);
 	strcpy(str, "Leave_me_alone");
 	ft_putendl_fd(str, fd);
 	lseek(fd, SEEK_SET, 0);
@@ -2945,7 +2945,7 @@ void	test_ft_putnbr_fd()
 	int		fd;
 	char	*buff = (char *)calloc(11, sizeof(char));
 
-	fd = open("test_putnbr", O_RDWR | O_CREAT);
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
 
 	printf("Test 1: ");
 	ft_putnbr_fd(4, fd);
@@ -2959,7 +2959,7 @@ void	test_ft_putnbr_fd()
 	memset(buff, 0, strlen(buff));
 
 	printf("Test 2: ");
-	fd = open("test_putnbr", O_RDWR | O_CREAT);
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
 	ft_putnbr_fd(1337, fd);
 	lseek(fd, SEEK_SET, 0);
 	read(fd, buff, 5);
@@ -2971,7 +2971,7 @@ void	test_ft_putnbr_fd()
 	memset(buff, 0, strlen(buff));
 
 	printf("Test 3: ");
-	fd = open("test_putnbr", O_RDWR | O_CREAT);
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
 	ft_putnbr_fd(0, fd);
 	lseek(fd, SEEK_SET, 0);
 	read(fd, buff, 2);
@@ -2983,7 +2983,7 @@ void	test_ft_putnbr_fd()
 	memset(buff, 0, strlen(buff));
 
 	printf("Test 4: ");
-	fd = open("test_putnbr", O_RDWR | O_CREAT);
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
 	ft_putnbr_fd(-123, fd);
 	lseek(fd, SEEK_SET, 0);
 	read(fd, buff, 5);
@@ -2995,7 +2995,7 @@ void	test_ft_putnbr_fd()
 	memset(buff, 0, strlen(buff));
 
 	printf("Test 5: ");
-	fd = open("test_putnbr", O_RDWR | O_CREAT);
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
 	ft_putnbr_fd(2147483647, fd);
 	lseek(fd, SEEK_SET, 0);
 	read(fd, buff, 11);
@@ -3007,7 +3007,7 @@ void	test_ft_putnbr_fd()
 	memset(buff, 0, strlen(buff));
 
 	printf("Test 6: ");
-	fd = open("test_putnbr", O_RDWR | O_CREAT);
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
 	ft_putnbr_fd(-2147483648, fd);
 	lseek(fd, SEEK_SET, 0);
 	read(fd, buff, 12);
@@ -3058,8 +3058,6 @@ int		main()
 	test_ft_itoa();
 	test_ft_strmapi();
 	test_ft_striteri();
-
-	// Doesnt work w/Workspace env
 	test_ft_putchar_fd();
 	test_ft_putstr_fd();
 	test_ft_putendl_fd();
