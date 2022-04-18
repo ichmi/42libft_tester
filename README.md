@@ -9,13 +9,9 @@ Feito isso, va ate a repo e execute **`make`**, ele ira se encarregar de compila
 cd 42libft_tester
 make
 ```
+O proprio comando ira encarregar-se de executar o binario _`test_exe`_, que possue os testes para suas funcoes **`ft_`** s.
 
-Agora eh so executar o binario da qual contem suas **`ft_`'s**:
-```sh
-./test_exe
-```
-
-PS: O teste depende do seu **_Makefile_**, portanto certifique-se de que ele esteja funcionando de forma adequada. Also, o teste nao trackeia alteracoes no seu repo (_libft_), therefore, vc precisara excluir o binario _`test_exe`_ via _`rm`_ ou _`make clean`_. Uma vez que vc se desfaca do binario, eh possivel compilar e linkar tudo novamente atraves do comando **`make`**.
+PS: O teste depende do seu **_Makefile_** para montar a _libft_, portanto certifique-se de que ele esteja funcionando de forma adequada, pois o _Makefile_ do teste depende do _Makefile_ do seu projeto. Also, o teste nao monitora alteracoes no seu projeto, nesse caso, vc precisara excluir o binario _`test_exe`_ via _`rm`_ ou _`make clean`_. Uma vez que vc se desfaca do binario, eh possivel compilar e linkar tudo novamente atraves do comando **`make`**. O novo executavel ira conter as novas alteracoes feitas.
 
 Feel free em adicionar novos testes ou reportar bugs, e tambem em enviar-me msg.
 
