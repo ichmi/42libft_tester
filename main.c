@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: frosa-ma <git.ichmi@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/18 14:05:18 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/18 20:19:32 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	test_ft_isalpha()
 {
-	printf("\nft_isalpha\n");
+	printf("\n\x1b[38:5:213mft_isalpha\x1b[0m\n");
 
 	printf("Test 1:  ");
 	if (ft_isalpha('-') == 0)
@@ -88,7 +88,7 @@ void	test_ft_isalpha()
 
 void	test_ft_isdigit()
 {
-	printf("\nft_isdigit\n");
+	printf("\n\x1b[38:5:213mft_isdigit\x1b[0m\n");
 
 	printf("Test 1:  ");
 	if (ft_isdigit(0) == 0)
@@ -165,7 +165,7 @@ void	test_ft_isdigit()
 
 void	test_ft_isalnum()
 {
-	printf("\nft_isalnum\n");
+	printf("\n\x1b[38:5:213mft_isalnum\x1b[0m\n");
 
 	printf("Test 1:  ");
 	if (ft_isalnum('a') != 0)
@@ -248,7 +248,7 @@ void	test_ft_isalnum()
 
 void	test_ft_isascii()
 {
-	printf("\nft_isascii\n");
+	printf("\n\x1b[38:5:213mft_isascii\x1b[0m\n");
 
 	printf("Test 1: ");
 	int fail = 0;
@@ -283,7 +283,7 @@ void	test_ft_isascii()
 
 void	test_ft_isprint()
 {
-	printf("\nft_isprint\n");
+	printf("\n\x1b[38:5:213mft_isprint\x1b[0m\n");
 
 	printf("Test 1: ");
 	int fail = 0;
@@ -318,7 +318,7 @@ void	test_ft_isprint()
 
 void	test_ft_strlen()
 {
-	printf("\nft_strlen\n");
+	printf("\n\x1b[38:5:213mft_strlen\x1b[0m\n");
 
 	printf("Test 1: ");
 	if (ft_strlen("foo") == 3)
@@ -359,7 +359,7 @@ void	test_ft_strlen()
 
 void	test_ft_toupper()
 {
-	printf("\nft_toupper\n");
+	printf("\n\x1b[38:5:213mft_toupper\x1b[0m\n");
 
 	printf("Test 1: ");
 	if (ft_toupper(' ') == ' ')
@@ -418,7 +418,7 @@ void	test_ft_toupper()
 
 void	test_ft_tolower()
 {
-	printf("\nft_tolower\n");
+	printf("\n\x1b[38:5:213mft_tolower\x1b[0m\n");
 
 	printf("Test 1: ");
 	if (ft_tolower(' ') == ' ')
@@ -477,7 +477,7 @@ void	test_ft_tolower()
 
 void	test_ft_strchr()
 {
-	printf("\nft_strchr\n");
+	printf("\n\x1b[38:5:213mft_strchr\x1b[0m\n");
 
 	char *s = (char *)calloc(100, sizeof(char));
 
@@ -523,7 +523,7 @@ void	test_ft_strchr()
 
 void	test_ft_strrchr()
 {
-	printf("\nft_strrchr\n");
+	printf("\n\x1b[38:5:213mft_strrchr\x1b[0m\n");
 
 	char *s = (char *)calloc(100, sizeof(char));
 
@@ -569,7 +569,7 @@ void	test_ft_strrchr()
 
 void	test_ft_strncmp()
 {
-	printf("\nft_strncmp\n");
+	printf("\n\x1b[38:5:213mft_strncmp\x1b[0m\n");
 
 	printf("Test 1:  ");
 	if (ft_strncmp("", "", 10) == 0)
@@ -670,7 +670,7 @@ void	test_ft_strncmp()
 
 void	test_ft_memchr()
 {
-	printf("\nft_memchr\n");
+	printf("\n\x1b[38:5:213mft_memchr\x1b[0m\n");
 
 	char *s = (char *)malloc(50 * sizeof(char));
 
@@ -768,7 +768,7 @@ void	test_ft_memchr()
 
 void	test_ft_memcmp()
 {
-	printf("\nft_memcmp\n");
+	printf("\n\x1b[38:5:213mft_memcmp\x1b[0m\n");
 
 	printf("Test 1:  ");
 	if (ft_memcmp(NULL, "foo", 3) == 0)
@@ -851,7 +851,7 @@ void	test_ft_memcmp()
 
 void	test_ft_memcpy()
 {
-	printf("\nft_memcpy\n");
+	printf("\n\x1b[38:5:213mft_memcpy\x1b[0m\n");
 
 	char *cdest = (char *)calloc(50, sizeof(char));
 	char *csrc  = (char *)calloc(50, sizeof(char));
@@ -1016,7 +1016,7 @@ void	test_ft_memcpy()
 
 void	test_ft_memmove()
 {
-	printf("\nft_memmove\n");
+	printf("\n\x1b[38:5:213mft_memmove\x1b[0m\n");
 
 	char *cdest = (char *)calloc(50, sizeof(char));
 	char *csrc  = (char *)calloc(50, sizeof(char));
@@ -1172,7 +1172,7 @@ void	test_ft_memmove()
 
 void	test_ft_memset()
 {
-	printf("\nft_memset\n");
+	printf("\n\x1b[38:5:213mft_memset\x1b[0m\n");
 
 	char *s = (char *)calloc(30, sizeof(char));
 
@@ -1282,7 +1282,7 @@ void	test_ft_memset()
 
 void	test_ft_bzero()
 {
-	printf("\nft_bzero\n");
+	printf("\n\x1b[38:5:213mft_bzero\x1b[0m\n");
 
 	char *s = (char *)calloc(20, sizeof(char));
 
@@ -1324,7 +1324,7 @@ void	test_ft_bzero()
 	printf("Test 5: ");
 	memset(s, 0, strlen(s));
 	ft_bzero(NULL, 1); // (null) entry
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 	
 	free(s);
 	s = NULL;
@@ -1348,7 +1348,7 @@ void	test_ft_bzero()
 
 void	test_ft_strlcpy()
 {
-	printf("\nft_strlcpy\n");
+	printf("\n\x1b[38:5:213mft_strlcpy\x1b[0m\n");
 
 	char *dest = (char *)calloc(30, sizeof(char));
 	char *src  = (char *)calloc(30, sizeof(char));
@@ -1457,7 +1457,7 @@ void	test_ft_strlcpy()
 
 void	test_ft_strlcat()
 {
-	printf("\nft_strlcat\n");
+	printf("\n\x1b[38:5:213mft_strlcat\x1b[0m\n");
 
 	char *dest = (char *)calloc(50, sizeof(char));
 	char *src  = (char *)calloc(50, sizeof(char));
@@ -1618,7 +1618,7 @@ void	test_ft_strlcat()
 
 void	test_ft_strnstr()
 {
-	printf("\nft_strnstr\n");
+	printf("\n\x1b[38:5:213mft_strnstr\x1b[0m\n");
 
 	char *s  = (char *)calloc(50, sizeof(char));
 
@@ -1744,7 +1744,7 @@ void	test_ft_strnstr()
 
 void	test_ft_atoi()
 {
-	printf("\nft_atoi\n");
+	printf("\n\x1b[38:5:213mft_atoi\x1b[0m\n");
 
 	printf("Test 1:  ");
 	if (ft_atoi("0") == 0) 
@@ -1888,7 +1888,7 @@ void	test_ft_atoi()
 
 void	test_ft_calloc()
 {
-	printf("\nft_calloc\n");
+	printf("\n\x1b[38:5:213mft_calloc\x1b[0m\n");
 
 	int		*p_int = NULL;
 	int		fail;
@@ -1987,7 +1987,7 @@ void	test_ft_calloc()
 
 void	test_ft_strdup()
 {
-	printf("\nft_strdup\n");
+	printf("\n\x1b[38:5:213mft_strdup\x1b[0m\n");
 
     char    *p = NULL;
 
@@ -2036,7 +2036,7 @@ void	test_ft_strdup()
 
 void	test_ft_substr()
 {
-	printf("\nft_substr\n");
+	printf("\n\x1b[38:5:213mft_substr\x1b[0m\n");
 
 	char	*orig = (char *)calloc(20, sizeof(char));
 	char	*str;
@@ -2119,7 +2119,7 @@ void	test_ft_substr()
 
 void	test_ft_strjoin()
 {
-	printf("\nft_strjoin\n");
+	printf("\n\x1b[38:5:213mft_strjoin\x1b[0m\n");
 
 	char	*s1 = (char *)calloc(20, sizeof(char));
 	char	*s2 = (char *)calloc(20, sizeof(char));
@@ -2213,7 +2213,7 @@ void	test_ft_strjoin()
 
 void	test_ft_strtrim()
 {
-	printf("\nt_strtrim\n");
+	printf("\n\x1b[38:5:213mft_strtrim\x1b[0m\n");
 
 	char	*str = (char *)calloc(30, sizeof(char));
 	char	*p;
@@ -2340,7 +2340,7 @@ void	test_ft_strtrim()
 
 void	test_ft_split()
 {
-	printf("\nft_split\n");
+	printf("\n\x1b[38:5:213mft_split\x1b[0m\n");
 
 	char	**tab;
 	int		fail;
@@ -2481,7 +2481,7 @@ void	test_ft_split()
 
 void	test_ft_itoa()
 {
-	printf("\nft_itoa\n");
+	printf("\n\x1b[38:5:213mft_itoa\x1b[0m\n");
 
 	char	*p = (char *)calloc(20, sizeof(char));
 
@@ -2592,7 +2592,7 @@ char	caesar_shift2(unsigned int n, char ch)
 }
 void	test_ft_strmapi()
 {
-	printf("\nft_strmapi\n");
+	printf("\n\x1b[38:5:213mft_strmapi\x1b[0m\n");
 
 	typedef char (*t_fn)(unsigned int, char);
 	t_fn	f1 = caesar_shift1;
@@ -2670,7 +2670,7 @@ void	inc(unsigned int i, char *s) { *s += i; }
 void	dec(unsigned int i, char *s) { *s -= i; }
 void	test_ft_striteri()
 {
-	printf("\nft_striteri\n");
+	printf("\n\x1b[38:5:213mft_striteri\x1b[0m\n");
 
 	typedef void	(*t_fn)(unsigned int, char *);
 	t_fn	f1 = inc;
@@ -2735,16 +2735,16 @@ void	test_ft_striteri()
 
 	printf("Test 7: ");
 	ft_striteri(NULL, f2);
-	printf("OK\n"); // or segfault
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	printf("Test 8: ");
 	ft_striteri("Fly away with me", NULL);
-	printf("OK\n"); // or segfault
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
 void	test_ft_putchar_fd()
 {
-	printf("\nft_putchar_fd\n");
+	printf("\n\x1b[38:5:213mft_putchar_fd\x1b[0m\n");
 
 	int		fd;
 	char	*buff = (char *)calloc(11, sizeof(char));
@@ -2794,11 +2794,11 @@ void	test_ft_putchar_fd()
 
 	printf("Test 4: ");
 	ft_putchar_fd('F', -1);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	printf("Test 5: ");
 	ft_putchar_fd(0, fd);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	free(buff);
 	buff = NULL;
@@ -2808,7 +2808,7 @@ void	test_ft_putchar_fd()
 
 void	test_ft_putstr_fd()
 {
-	printf("\nft_putstr_fd\n");
+	printf("\n\x1b[38:5:213mft_putstr_fd\x1b[0m\n");
 
 	int		fd;
 	char	*buff = (char *)calloc(11, sizeof(char));
@@ -2858,11 +2858,11 @@ void	test_ft_putstr_fd()
 
 	printf("Test 4: ");
 	ft_putstr_fd(NULL, fd);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	printf("Test 5: ");
 	ft_putstr_fd(str, -1);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	free(buff);
 	buff = NULL;
@@ -2872,7 +2872,7 @@ void	test_ft_putstr_fd()
 
 void	test_ft_putendl_fd()
 {
-	printf("\nft_putendl_fd\n");
+	printf("\n\x1b[38:5:213mft_putendl_fd\x1b[0m\n");
 
 	int		fd;
 	char	*buff = (char *)calloc(30, sizeof(char));
@@ -2922,13 +2922,13 @@ void	test_ft_putendl_fd()
 
 	printf("Test 4: "); // NULL entry
 	ft_putendl_fd(NULL, fd);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 	memset(buff, 0, strlen(buff));
 	memset(str, 0, strlen(str));
 
 	printf("Test 5: "); // -ve fd
 	ft_putendl_fd(str, -1);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 	memset(buff, 0, strlen(buff));
 	memset(str, 0, strlen(str));
 
@@ -2940,7 +2940,7 @@ void	test_ft_putendl_fd()
 
 void	test_ft_putnbr_fd()
 {
-	printf("\nft_putnbr_fd\n");
+	printf("\n\x1b[38:5:213mft_putnbr_fd\x1b[0m\n");
 
 	int		fd;
 	char	*buff = (char *)calloc(11, sizeof(char));
@@ -3020,7 +3020,7 @@ void	test_ft_putnbr_fd()
 
 	printf("Test 7: "); // -ve fd
 	ft_putnbr_fd(42, -1);
-	printf("OK\n");
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	free(buff);
 	buff = NULL;
@@ -3060,10 +3060,10 @@ int		main()
 	test_ft_striteri();
 
 	// Doesnt work w/Workspace env
-	// test_ft_putchar_fd();
-	// test_ft_putstr_fd();
-	// test_ft_putendl_fd();
-	// test_ft_putnbr_fd();
+	test_ft_putchar_fd();
+	test_ft_putstr_fd();
+	test_ft_putendl_fd();
+	test_ft_putnbr_fd();
 
 	return (0);
 }
