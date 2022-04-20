@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/20 01:29:31 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:09:29 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -3351,50 +3351,136 @@ void	test_ft_lstdelone()
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
+void	test_ft_lstclear()
+{
+	printf("\n\x1b[38:5:213mft_lstclear\x1b[0m\n");
+
+	t_list *lst;
+	
+	lst = ft_lstnew(strdup("A"));
+	ft_lstadd_back(&lst, ft_lstnew(strdup("B")));
+	ft_lstadd_back(&lst, ft_lstnew(strdup("C")));
+	int	*p = (int *)malloc(1 * sizeof(int));
+	*p = 42;
+	ft_lstadd_back(&lst, ft_lstnew(p));
+
+	t_list	*n1 = lst;
+	t_list	*n2 = n1->next;
+	t_list	*n3 = n2->next;
+
+	printf("Test 1: ");
+	ft_lstclear(&lst, free);
+	if (!lst)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 2: ");
+	if (!lst && strcmp((char *)n1->content, "A") != 0 \
+			 && strcmp((char *)n2->content, "B") != 0 \
+			 && strcmp((char *)n3->content, "C") != 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	
+	printf("Test 3: ");
+	ft_lstclear(NULL, NULL);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 4: ");
+	ft_lstclear(&lst, NULL);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 5: ");
+	ft_lstclear(NULL, free);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+}
+
+void	__strfn(void *scont)
+{
+	while (*scont)
+		scont = scont + 1;
+}
+
+void	__intfn(void *scont)
+{
+	while (*scont)
+		scont = scont + 1;
+}
+
+void	test_ft_lstiter()
+{
+	printf("\n\x1b[38:5:213mft_lstiter\x1b[0m\n");
+
+	t_list	*lst;
+
+	lst = ft_lstnew(strdup("0"));
+	ft_lstadd_back(&lst, ft_lstnew(strdup("0")));
+	ft_lstadd_back(&lst, ft_lstnew(strdup("0")));
+	int	*p = (int *)malloc(1 * sizeof(int));
+	*p = 0;
+	ft_lstadd_back(&lst, ft_lstnew(p));
+
+	ft_lstiter()
+
+
+	printf("Test 1: ");
+
+}
+
+void	test_ft_lstmap()
+{
+	printf("\n\x1b[38:5:213mft_lstmap\x1b[0m\n");
+
+}
+
 int		main()
 {
-	test_ft_isalpha();
-	test_ft_isdigit();
-	test_ft_isalnum();
-	test_ft_isascii();
-	test_ft_isprint();
-	test_ft_strlen();
-	test_ft_toupper();
-	test_ft_tolower();
-	test_ft_strchr();
-	test_ft_strrchr();
-	test_ft_strncmp();
-	test_ft_memchr();
-	test_ft_memcmp();
-	test_ft_memcpy();
-	test_ft_memmove();
-	test_ft_memset();
-	test_ft_bzero();
-	test_ft_strlcpy();
-	test_ft_strlcat();
-	test_ft_strnstr();
-	test_ft_atoi();
-	test_ft_calloc();
-	test_ft_strdup();
-	test_ft_substr();
-	test_ft_strjoin();
-	test_ft_strtrim();
-	test_ft_split();
-	test_ft_itoa();
-	test_ft_strmapi();
-	test_ft_striteri();
-	test_ft_putchar_fd();
-	test_ft_putstr_fd();
-	test_ft_putendl_fd();
-	test_ft_putnbr_fd();
+	// test_ft_isalpha();
+	// test_ft_isdigit();
+	// test_ft_isalnum();
+	// test_ft_isascii();
+	// test_ft_isprint();
+	// test_ft_strlen();
+	// test_ft_toupper();
+	// test_ft_tolower();
+	// test_ft_strchr();
+	// test_ft_strrchr();
+	// test_ft_strncmp();
+	// test_ft_memchr();
+	// test_ft_memcmp();
+	// test_ft_memcpy();
+	// test_ft_memmove();
+	// test_ft_memset();
+	// test_ft_bzero();
+	// test_ft_strlcpy();
+	// test_ft_strlcat();
+	// test_ft_strnstr();
+	// test_ft_atoi();
+	// test_ft_calloc();
+	// test_ft_strdup();
+	// test_ft_substr();
+	// test_ft_strjoin();
+	// test_ft_strtrim();
+	// test_ft_split();
+	// test_ft_itoa();
+	// test_ft_strmapi();
+	// test_ft_striteri();
+	// test_ft_putchar_fd();
+	// test_ft_putstr_fd();
+	// test_ft_putendl_fd();
+	// test_ft_putnbr_fd();
 
-	test_ft_lstnew();
-	test_ft_lstadd_front();
-	test_ft_lstsize();
-	test_ft_lstlast();
-	test_ft_lstadd_back();
-	test_ft_lstdelone();
+	// test_ft_lstnew();
+	// test_ft_lstadd_front();
+	// test_ft_lstsize();
+	// test_ft_lstlast();
+	// test_ft_lstadd_back();
+	// test_ft_lstdelone();
 	// test_ft_lstclear();
+	// test_ft_lstclear();
+	test_ft_lstiter();
+	// test_ft_lstmap();
 
 	return (0);
 }
