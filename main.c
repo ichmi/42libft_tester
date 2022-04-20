@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/19 19:32:07 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/20 01:29:31 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,7 +264,7 @@ void	test_ft_isascii()
 
 	printf("Test 2: ");
 	fail = 0;
-	for (int i=-255; i < 0; ++i)
+	for (int i=-128; i < 0; ++i)
 		if (ft_isascii(i))
 			fail = 1;
 	if (fail)
@@ -274,7 +274,7 @@ void	test_ft_isascii()
 
 	printf("Test 3: ");
 	fail = 0;
-	for (int i=128; i < 256; ++i)
+	for (int i=128; i < 255; ++i)
 		if (ft_isascii(i))
 			fail = 1;
 	if (fail)
@@ -289,7 +289,7 @@ void	test_ft_isprint()
 
 	printf("Test 1: ");
 	int fail = 0;
-	for (int i=0; i >= 32 && i <= 127; ++i)
+	for (int i=0; i >= 32 && i < 127; ++i)
 		if (!ft_isprint(i))
 			fail = 1;
 	if (fail)
@@ -299,7 +299,7 @@ void	test_ft_isprint()
 
 	printf("Test 2: ");
 	fail = 0;
-	for (int i=-255; i < 32; ++i)
+	for (int i=-128; i < 32; ++i)
 		if (ft_isprint(i))
 			fail = 1;
 	if (fail)
@@ -309,7 +309,7 @@ void	test_ft_isprint()
 
 	printf("Test 3: ");
 	fail = 0;
-	for (int i=128; i < 256; ++i)
+	for (int i=127; i < 255; ++i)
 		if (ft_isprint(i))
 			fail = 1;
 	if (fail)
@@ -665,6 +665,12 @@ void	test_ft_strncmp()
 
 	printf("Test 16: ");
 	if (ft_strncmp("\0", "", 3) == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	
+	printf("Test 17: ");
+	if (ft_strncmp("test\200", "test\0", 6) == 128) // -128 sucks
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1637,7 +1643,7 @@ void	test_ft_strnstr()
 	strcpy(s, "The quick brown fox jumps over the lazy dog");
 	p = ft_strnstr(s, "the lazy", strlen(s));
 	if (strcmp(p, s+31) == 0) // returns a pointer to 'the lazy dog0'
-		printf("\x1b[38:5:10mOK\x1b[0m\n");       //                       p
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
@@ -1735,6 +1741,33 @@ void	test_ft_strnstr()
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "underground");
 	p = ft_strnstr(s, "XyZ", 100);
+	if (!p)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 14: ");
+	memset(s, 0, strlen(s)); 
+	strcpy(s, "lorem ipsum dolor sit amet");
+	p = ft_strnstr(s, "ipsummm", 30);
+	if (!p)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 15: ");
+	memset(s, 0, strlen(s)); 
+	strcpy(s, "rabbit run"); // strlen(little) > strlen(big)
+	p = ft_strnstr(s, "Please forgive me", 30); 
+	if (!p)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 16: ");
+	memset(s, 0, strlen(s)); 
+	strcpy(s, "rabbit run");
+	p = ft_strnstr(s, "rabbit", 3);  // len < strlen(little)
 	if (!p)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -2040,10 +2073,10 @@ void	test_ft_substr()
 {
 	printf("\n\x1b[38:5:213mft_substr\x1b[0m\n");
 
-	char	*orig = (char *)calloc(20, sizeof(char));
+	char	*orig = (char *)calloc(50, sizeof(char));
 	char	*str;
 
-	printf("Test 1: "); // getting first 3 bytes from string (big)
+	printf("Test 1:  "); // getting first 3 bytes from string (big)
 	strcpy(orig, "foobar baz");
 	str = ft_substr(orig, 0, 3);
 	if (strcmp(str, "foo") == 0)
@@ -2051,42 +2084,41 @@ void	test_ft_substr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2: "); // getting 3 middle bytes from string (big)
+	printf("Test 2:  "); // getting 3 middle bytes from string (big)
 	str = ft_substr(orig, 3, 3);
 	if (strcmp(str, "bar") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 3: "); // getting last 3 bytes from string (big)
+	printf("Test 3:  "); // getting last 3 bytes from string (big)
 	str = ft_substr(orig, 7, 3);
 	if (strcmp(str, "baz") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4: "); // NULL entry to string (big)
+	printf("Test 4:  "); // NULL entry to string (big)
 	if (ft_substr(NULL, 0, 6) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: "); // getting 6 bytes
+	printf("Test 5:  "); // getting 6 bytes
 	str = ft_substr(orig, 0, 6);
 	if (strcmp(str, "foobar") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 6: "); // jumps over the null-char to get substr
+	printf("Test 6:  "); // jumps over the null-char to get substr 
 	char orig2[] = "Say \0goodbye";
-	str = ft_substr(orig2, 5, 4);
-	if (strcmp(str, "good") == 0)
+	if (ft_substr(orig2, 5, 4) == NULL) 	// strcmp(str, "good")
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7: "); // getting 1st char only
+	printf("Test 7:  "); // getting 1st char only
 	memset(orig, 0, strlen(orig));
 	strcpy(orig, "Sing for the moment");
 	str = ft_substr(orig, 0, 1);
@@ -2095,15 +2127,23 @@ void	test_ft_substr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 8: "); // getting last char only
+	printf("Test 8:  "); // getting last char only
 	str = ft_substr(orig, 18, 1);
 	if (strcmp(str, "t") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9: "); // a -ve offset would segfault 
+	printf("Test 9:  "); // a -ve offset would segfault 
 	if (ft_substr(orig, -1, 3) == NULL)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 10: ");
+	memset(orig, 0, strlen(orig));
+	strcpy(orig, "intro 2");
+	if (ft_substr(orig, 400, 20) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -2477,6 +2517,31 @@ void	test_ft_split()
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 11: ");
+	char	*J[2] = {"foo bar", 0};
+	fail = 0;
+	tab = ft_split("foo bar", 'z');
+	for (int i=0; tab[i]; ++i)
+		if (strcmp(tab[i], J[i]) != 0)
+			fail = 1;
+	if (!fail)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 12: ");
+	char	*K[2] = {"", 0};
+	fail = 0;
+	tab = ft_split("", 'F');
+	for (int i=0; tab[i]; ++i)
+		if (strcmp(tab[i], K[i]) != 0)
+			fail = 1;
+	if (!fail)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
 	free(tab);
 	tab = NULL;
 }
@@ -3024,6 +3089,18 @@ void	test_ft_putnbr_fd()
 	ft_putnbr_fd(42, -1);
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
+	printf("Test 7: ");
+	fd = open("test_putnbr", O_RDWR | O_CREAT, 00777);
+	ft_putnbr_fd(0xA, fd);
+	lseek(fd, SEEK_SET, 0);
+	read(fd, buff, 3);
+	if(strcmp(buff, "10") == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	unlink("./test_putnbr");
+	memset(buff, 0, strlen(buff));
+
 	free(buff);
 	buff = NULL;
 }
@@ -3037,7 +3114,7 @@ void	test_ft_lstnew()
 	if (lst1 && strcmp((char *)lst1->content, "Bad guy") == 0 && lst1->next == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	free(lst1);
 
 	printf("Test 2: ");
@@ -3045,7 +3122,7 @@ void	test_ft_lstnew()
 	if (lst2 && strcmp((char *)lst2->content, "monody") == 0 && lst2->next == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	free(lst2->content);
 	free(lst2);
 
@@ -3116,33 +3193,36 @@ void	test_ft_lstsize()
 	printf("\n\x1b[38:5:213mft_lstsize\x1b[0m\n");
 
 	t_list	*lst;
-	int		fail = 0;
 
 	printf("Test 1: ");
-	if (ft_lstsize(lst) != 0)
-		fail = 1;
 	lst = ft_lstnew("A");
-	if (ft_lstsize(lst) != 1)
-		fail = 1;
-	ft_lstadd_front(&lst, ft_lstnew("B"));
-	ft_lstadd_front(&lst, ft_lstnew("C"));
-	if (ft_lstsize(lst) != 3)
-		fail = 1;
-	ft_lstadd_front(&lst, ft_lstnew("D"));
-	ft_lstadd_front(&lst, ft_lstnew("E"));
-	if (ft_lstsize(lst) != 5)
-		fail = 1;
-	if (!fail)
+	if (ft_lstsize(lst) == 1)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+		
+	printf("Test 2: ");
+	ft_lstadd_front(&lst, ft_lstnew("B"));
+	ft_lstadd_front(&lst, ft_lstnew("C"));
+	if (ft_lstsize(lst) == 3)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+		
+	printf("Test 3: ");
+	ft_lstadd_front(&lst, ft_lstnew("D"));
+	ft_lstadd_front(&lst, ft_lstnew("E"));
+	if (ft_lstsize(lst) == 5)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	free(lst);
 
-	printf("Test 2: ");
+	printf("Test 4: ");
 	if (ft_lstsize(NULL) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_lstlast()
@@ -3158,27 +3238,27 @@ void	test_ft_lstlast()
 	if (ft_lstlast(lst) == n1)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 2: ");
 	ft_lstadd_front(&lst, ft_lstnew("B"));
 	if (ft_lstlast(lst) == n1)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 3: ");
 	ft_lstadd_front(&lst, ft_lstnew("C"));
 	if (ft_lstlast(lst) == n1)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 4: ");
 	if (ft_lstlast(NULL) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
-		printf("\x1b[38:5:9mOK\x1b[0m\n");
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	free(lst);
 }
 
@@ -3314,7 +3394,7 @@ int		main()
 	test_ft_lstlast();
 	test_ft_lstadd_back();
 	test_ft_lstdelone();
+	// test_ft_lstclear();
 
 	return (0);
 }
-
