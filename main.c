@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/20 17:09:29 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/21 14:23:12 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -2148,13 +2148,6 @@ void	test_ft_substr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	// printf("Test 10: ");
-	// str = ft_substr(orig, 0, -1); // -ve len is going to segfault as well
-	// if (strcmp(str, "Sing for the moment") == 0)
-	// 	printf("OK\n");
-	// else
-	// 	printf("KO\n");
-
 	free(orig);
 	orig = NULL;
 }
@@ -3167,12 +3160,9 @@ void	test_ft_lstadd_front()
 	t_list *n2 = n1->next;
 	t_list *n3 = n2->next;
 
-	if (*(int *)n1->content != 10 && n1->next != n2)
-		fail = 1;
-	if (strcmp((char *)n2->content, "B") != 0 && n2->next != n3)
-		fail = 1;
-	if (strcmp((char *)n3->content, "A") != 0 && n3->next != NULL)
-		fail = 1;
+	if (*(int *)n1->content != 10 && n1->next != n2) fail = 1;
+	if (strcmp((char *)n2->content, "B") != 0 && n2->next != n3) fail = 1;
+	if (strcmp((char *)n3->content, "A") != 0 && n3->next != NULL) fail = 1;
 	if (!fail)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -3186,16 +3176,33 @@ void	test_ft_lstadd_front()
 	printf("Test 3: ");
 	ft_lstadd_front(&lst, NULL);
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 4: ");
+	t_list	*nlst1 = NULL;
+	ft_lstadd_front(&nlst1, ft_lstnew(NULL));
+	if (nlst1)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 5: ");
+	t_list	*nlst2 = NULL;
+	ft_lstadd_front(&nlst2, ft_lstnew("book of rhymes"));
+	if (nlst2 && strcmp((char *)nlst2->content, "book of rhymes") == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
 }
 
 void	test_ft_lstsize()
 {
 	printf("\n\x1b[38:5:213mft_lstsize\x1b[0m\n");
 
-	t_list	*lst;
+	t_list	*lst = NULL;
 
 	printf("Test 1: ");
-	lst = ft_lstnew("A");
+	ft_lstadd_front(&lst, ft_lstnew("A"));
 	if (ft_lstsize(lst) == 1)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -3229,10 +3236,10 @@ void	test_ft_lstlast()
 {
 	printf("\n\x1b[38:5:213mft_lstlast\x1b[0m\n");
 
-	t_list	*lst;
+	t_list	*lst = NULL;
 
-	lst = ft_lstnew("A");
-	t_list *n1 = lst;
+	ft_lstadd_front(&lst, ft_lstnew("A"));
+	t_list *n1 = lst; // Going to be the last one (always)
 
 	printf("Test 1: ");
 	if (ft_lstlast(lst) == n1)
@@ -3269,7 +3276,8 @@ void	test_ft_lstadd_back()
 	int	fail = 0;
 
 	printf("Test 1: ");
-	t_list *lst = ft_lstnew("A");
+	t_list *lst = NULL;
+	ft_lstadd_back(&lst, ft_lstnew("A"));
 	ft_lstadd_back(&lst, ft_lstnew("B"));
 	ft_lstadd_back(&lst, ft_lstnew("C"));
 	int num = 10;
@@ -3281,14 +3289,10 @@ void	test_ft_lstadd_back()
 	t_list *n3 = n2->next;
 	t_list *n4 = n3->next;
 
-	if (strcmp((char *)n1->content, "A") != 0 && n1->next != n2)
-		fail = 1;
-	if (strcmp((char *)n2->content, "B") != 0 && n2->next != n3)
-		fail = 1;
-	if (strcmp((char *)n3->content, "C") != 0 && n3->next != n4)
-		fail = 1;
-	if (*(int *)n4->content != 10 && n4->next != NULL)
-		fail = 1;
+	if (strcmp((char *)n1->content, "A") != 0 && n1->next != n2) fail = 1;
+	if (strcmp((char *)n2->content, "B") != 0 && n2->next != n3) fail = 1;
+	if (strcmp((char *)n3->content, "C") != 0 && n3->next != n4) fail = 1;
+	if (*(int *)n4->content != 10 && n4->next != NULL) fail = 1;
 	if (!fail)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -3302,6 +3306,22 @@ void	test_ft_lstadd_back()
 	printf("Test 3: ");
 	ft_lstadd_back(&lst, NULL);
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 4: ");
+	t_list	*nlst1 = NULL;
+	ft_lstadd_back(&nlst1, ft_lstnew(NULL));
+	if (nlst1)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 5: ");
+	t_list	*nlst2 = NULL;
+	ft_lstadd_back(&nlst2, ft_lstnew("book of rhymes"));
+	if (nlst2 && strcmp((char *)nlst2->content, "book of rhymes") == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_lstdelone()
@@ -3376,8 +3396,8 @@ void	test_ft_lstclear()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 2: ");
-	if (!lst && strcmp((char *)n1->content, "A") != 0 \
-			 && strcmp((char *)n2->content, "B") != 0 \
+	if (!lst && strcmp((char *)n1->content, "A") != 0
+			 && strcmp((char *)n2->content, "B") != 0
 			 && strcmp((char *)n3->content, "C") != 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -3396,91 +3416,185 @@ void	test_ft_lstclear()
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
-void	__strfn(void *scont)
+// ft_lstiter Test functions
+void	__strfn(void *cont)
 {
-	while (*scont)
-		scont = scont + 1;
-}
+	unsigned char	*p;
 
-void	__intfn(void *scont)
+	p = cont;
+	while (*p)
+	{
+		*p += 1;
+		p++;
+	}
+}
+void	__intfn(void *cont)
 {
-	while (*scont)
-		scont = scont + 1;
+	int		*p;
+
+	p = cont;
+	*p = *p + 1;
 }
 
 void	test_ft_lstiter()
 {
 	printf("\n\x1b[38:5:213mft_lstiter\x1b[0m\n");
 
-	t_list	*lst;
+	t_list	*lst1;
 
-	lst = ft_lstnew(strdup("0"));
-	ft_lstadd_back(&lst, ft_lstnew(strdup("0")));
-	ft_lstadd_back(&lst, ft_lstnew(strdup("0")));
-	int	*p = (int *)malloc(1 * sizeof(int));
-	*p = 0;
-	ft_lstadd_back(&lst, ft_lstnew(p));
+	lst1 = ft_lstnew(strdup("0"));
+	ft_lstadd_back(&lst1, ft_lstnew(strdup("0")));
+	ft_lstadd_back(&lst1, ft_lstnew(strdup("0")));
 
-	ft_lstiter()
+	t_list	*n1 = lst1;
+	t_list	*n2 = n1->next;
+	t_list	*n3 = n2->next;
 
+	ft_lstiter(lst1, &__strfn);
 
 	printf("Test 1: ");
+	if (strcmp((char *)n1->content, "1") == 0 &&
+		strcmp((char *)n2->content, "1") == 0 &&
+		strcmp((char *)n3->content, "1") == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
+	int	*p = (int *)malloc(1 * sizeof(int)); *p = 0;
+	int	*q = (int *)malloc(1 * sizeof(int)); *q = 0;
+	int	*r = (int *)malloc(1 * sizeof(int)); *r = 0;
+	int	*s = (int *)malloc(1 * sizeof(int)); *s = 0;
+
+	t_list	*lst2 = ft_lstnew(p);
+	ft_lstadd_back(&lst2, ft_lstnew(q));
+	ft_lstadd_back(&lst2, ft_lstnew(r));
+
+	t_list	*n4 = lst2;
+	t_list	*n5 = n4->next;
+	t_list	*n6 = n5->next;
+
+	ft_lstiter(lst2, &__intfn);
+
+	printf("Test 2: ");
+	if (*(int *)n4->content == 1 &&\
+		*(int *)n5->content == 1 &&\
+		*(int *)n6->content == 1)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	
+	printf("Test 3: ");
+	ft_lstiter(NULL, NULL);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 4: ");
+	ft_lstiter(lst1, NULL);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 5: ");
+	ft_lstiter(NULL, free);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	ft_lstclear(&lst1, free);
+	ft_lstclear(&lst2, free);
+}
+
+// ft_lstmap Test function
+void	*__ft_sz(void *cont)
+{
+	if (cont)
+		return (strdup("♥"));
+	return (strdup("F"));
 }
 
 void	test_ft_lstmap()
 {
 	printf("\n\x1b[38:5:213mft_lstmap\x1b[0m\n");
 
+	t_list	*lst = NULL;
+	ft_lstadd_back(&lst, ft_lstnew(strdup("foo")));
+	ft_lstadd_back(&lst, ft_lstnew(strdup("bar")));
+	ft_lstadd_back(&lst, ft_lstnew(strdup("baz")));
+
+
+	printf("Test 1: ");
+	t_list	*newlst = ft_lstmap(lst, __ft_sz, free);
+	t_list	*n1 = newlst;
+	t_list	*n2 = n1->next;
+	t_list	*n3 = n2->next;
+	if (strcmp((char *)n1->content, "♥") == 0 &&
+		strcmp((char *)n2->content, "♥") == 0 &&
+		strcmp((char *)n3->content, "♥") == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	
+	printf("Test 2: ");
+	ft_lstmap(NULL, __ft_sz, free);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 3: ");
+	ft_lstmap(lst, NULL, free);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	printf("Test 4: ");
+	ft_lstmap(lst, __ft_sz, NULL);
+	printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	ft_lstclear(&lst, free);
+	ft_lstclear(&newlst, free);
 }
 
 int		main()
 {
-	// test_ft_isalpha();
-	// test_ft_isdigit();
-	// test_ft_isalnum();
-	// test_ft_isascii();
-	// test_ft_isprint();
-	// test_ft_strlen();
-	// test_ft_toupper();
-	// test_ft_tolower();
-	// test_ft_strchr();
-	// test_ft_strrchr();
-	// test_ft_strncmp();
-	// test_ft_memchr();
-	// test_ft_memcmp();
-	// test_ft_memcpy();
-	// test_ft_memmove();
-	// test_ft_memset();
-	// test_ft_bzero();
-	// test_ft_strlcpy();
-	// test_ft_strlcat();
-	// test_ft_strnstr();
-	// test_ft_atoi();
-	// test_ft_calloc();
-	// test_ft_strdup();
-	// test_ft_substr();
-	// test_ft_strjoin();
-	// test_ft_strtrim();
-	// test_ft_split();
-	// test_ft_itoa();
-	// test_ft_strmapi();
-	// test_ft_striteri();
-	// test_ft_putchar_fd();
-	// test_ft_putstr_fd();
-	// test_ft_putendl_fd();
-	// test_ft_putnbr_fd();
+	// Part 1
+	test_ft_isalpha();
+	test_ft_isdigit();
+	test_ft_isalnum();
+	test_ft_isascii();
+	test_ft_isprint();
+	test_ft_strlen();
+	test_ft_toupper();
+	test_ft_tolower();
+	test_ft_strchr();
+	test_ft_strrchr();
+	test_ft_strncmp();
+	test_ft_memchr();
+	test_ft_memcmp();
+	test_ft_memcpy();
+	test_ft_memmove();
+	test_ft_memset();
+	test_ft_bzero();
+	test_ft_strlcpy();
+	test_ft_strlcat();
+	test_ft_strnstr();
+	test_ft_atoi();
+	test_ft_calloc();
+	test_ft_strdup();
 
-	// test_ft_lstnew();
-	// test_ft_lstadd_front();
-	// test_ft_lstsize();
-	// test_ft_lstlast();
-	// test_ft_lstadd_back();
-	// test_ft_lstdelone();
-	// test_ft_lstclear();
-	// test_ft_lstclear();
+	// Part 2
+	test_ft_substr();
+	test_ft_strjoin();
+	test_ft_strtrim();
+	test_ft_split();
+	test_ft_itoa();
+	test_ft_strmapi();
+	test_ft_striteri();
+	test_ft_putchar_fd();
+	test_ft_putstr_fd();
+	test_ft_putendl_fd();
+	test_ft_putnbr_fd();
+
+	// Bonus
+	test_ft_lstnew();
+	test_ft_lstadd_front();
+	test_ft_lstsize();
+	test_ft_lstlast();
+	test_ft_lstadd_back();
+	test_ft_lstdelone();
+	test_ft_lstclear();
 	test_ft_lstiter();
-	// test_ft_lstmap();
+	test_ft_lstmap();
 
 	return (0);
 }
