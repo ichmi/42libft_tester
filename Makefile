@@ -14,7 +14,6 @@
 
 CC = gcc
 NAME = test_exe
-MAND = test_exe
 CFLAGS := -Wall -Wextra -Werror 
 MAKE := make
 MFSUB = -C ..
