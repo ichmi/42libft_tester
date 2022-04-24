@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/21 15:05:01 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/23 21:28:26 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -335,28 +335,28 @@ void	test_ft_strlen()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 3: ");
-	if (ft_strlen(NULL) == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 4: ");
 	if (ft_strlen("x") == 1)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: ");
+	printf("Test 4: ");
 	if (ft_strlen("foo b\0ar baz") == 5)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 6: ");
+	printf("Test 5: ");
 	if (ft_strlen("foo\tbar\tbaz") == 11)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 6: ");
+	// if (ft_strlen(NULL) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_toupper()
@@ -514,11 +514,11 @@ void	test_ft_strchr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: ");
-	if (ft_strchr(NULL, 'f') == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	// printf("Test 5: ");
+	// if (ft_strchr(NULL, 'f') == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	free(s);
 }
@@ -560,11 +560,11 @@ void	test_ft_strrchr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: ");
-	if (ft_strrchr(NULL, 'F') == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	// printf("Test 5: ");
+	// if (ft_strrchr(NULL, 'F') == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	free(s);
 }
@@ -634,46 +634,46 @@ void	test_ft_strncmp()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 11: ");
-	if (ft_strncmp("foo", NULL, 3) == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 12: ");
-	if (ft_strncmp(NULL, "foobar", 3) == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 13: ");
 	if (ft_strncmp("f\0Z", "f\0A", 3) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 14: ");
+	printf("Test 12: ");
 	if (ft_strncmp("\0", "\0", 3) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 15: ");
+	printf("Test 13: ");
 	if (ft_strncmp("", "\0", 3) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 16: ");
+	printf("Test 14: ");
 	if (ft_strncmp("\0", "", 3) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 17: ");
+	printf("Test 15: ");
 	if (ft_strncmp("test\200", "test\0", 6) == 128) // -128 sucks
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 11: ");
+	// if (ft_strncmp("foo", NULL, 3) == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 12: ");
+	// if (ft_strncmp(NULL, "foobar", 3) == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_memchr()
@@ -689,19 +689,19 @@ void	test_ft_memchr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2:  ");
+	printf("Test 2:  "); // not even close
 	if (ft_memchr(s, 'b', 3) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 3:  ");
-	if (ft_memchr(NULL, 'b', strlen(s)) == NULL)
+	printf("Test 3:  "); // cant find "b" into "" dummy
+	if (ft_memchr("", 'b', strlen(s)) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4:  ");
+	printf("Test 4:  "); // F isnt f
 	if (ft_memchr(s, 'F', strlen(s)) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -722,12 +722,28 @@ void	test_ft_memchr()
 	printf("Test 7:  ");
 	memset(s, 0, 50);
 	strcpy(s, "Same song and dance");
-	if ((char *)ft_memchr(s, '\0', 20) == NULL)
+	if (strcmp((char *)ft_memchr(s, '\0', 20), "") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 8:  ");
+	memset(s, 0, 50);
+	strcpy(s, "Same song and dance");
+	if (ft_memchr(s, '\0', 5) == NULL)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 9:  ");
+	memset(s, 0, 50);
+	strcpy(s, "Same s\0ong and dance"); // returns a pointer to "" (0)
+	if (strcmp((char *)ft_memchr(s, '\0', 10), "") == 0)
+		printf("\x1b[38:5:10mOK\x1b[0m\n");
+	else
+		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	printf("Test 10: ");
 	memset(s, 0, 50);
 	strcpy(s, "mich@student.42sp.org.br");
 	if (strcmp((char *)ft_memchr(s, '@', strlen(s)), s+4) == 0)
@@ -735,7 +751,7 @@ void	test_ft_memchr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9:  ");
+	printf("Test 11: ");
 	char s2[] = "";
 	if (ft_memchr(s2, 'F', strlen(s)) == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
@@ -748,30 +764,28 @@ void	test_ft_memchr()
 	int tab[] = {10, 20, 30, 40, -42};
 	int *q;
 
-	printf("Test 10: ");
+	printf("Test 12: ");
 	q = ft_memchr(tab, 20, sizeof(tab));
 	if (*q == tab[1])
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 11: ");
+	printf("Test 13: ");
 	q = ft_memchr(tab, 40, sizeof(tab));
 	if (*q == tab[3])
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 12: ");
+	printf("Test 14: ");
 	q = ft_memchr(tab, 90, sizeof(tab));
 	if (q == NULL)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	// q = ft_memchr(tab, -42, sizeof(tab));
-	// 	 munmap_chunk(): invalid pointer
-	// 	 [1]	15958 abort. Cant assign -ve value to 'unsigned char' dude x.x
+	// ft_memchr(tab, -42, sizeof(tab));   munmap_chunk(): invalid pointer
 }
 
 void	test_ft_memcmp()
@@ -779,82 +793,80 @@ void	test_ft_memcmp()
 	printf("\n\x1b[38:5:213mft_memcmp\x1b[0m\n");
 
 	printf("Test 1:  ");
-	if (ft_memcmp(NULL, "foo", 3) == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 2:  ");
-	if (ft_memcmp("foo", NULL, 3) == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 3:  ");
 	if (ft_memcmp("foo", "foo", 0) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4:  ");
+	printf("Test 2:  ");
 	if (ft_memcmp("foobar", "foo", 3) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5:  ");
+	printf("Test 3:  ");
 	if (ft_memcmp("foo", "foobar", 3) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 6:  ");
+	printf("Test 4:  ");
 	if (ft_memcmp("foobar", "foo", 10) == 98)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7:  ");
+	printf("Test 5:  ");
 	if (ft_memcmp("foo", "foobar", 10) == -98)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 8:  ");
+	printf("Test 6:  ");
 	if (ft_memcmp("", "", 10) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9:  ");
+	printf("Test 7:  ");
 	if (ft_memcmp("\0", "\0", 10) == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 10: ");
+	printf("Test 8:  ");
 	if (ft_memcmp("foo", "", 10) == 102)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 11: ");
+	printf("Test 9:  ");
 	if (ft_memcmp("", "foo", 10) == -102)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 12: ");
+	printf("Test 10: ");
 	if (ft_memcmp("XYZ", "ABC", 1) == 23)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 13: ");
+	printf("Test 11: ");
 	if (ft_memcmp("ABC", "ABZ", 3) == -23)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// if (ft_memcmp(NULL, "foo", 3) == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// if (ft_memcmp("foo", NULL, 3) == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_memcpy()
@@ -867,8 +879,8 @@ void	test_ft_memcpy()
     printf("Test 1:  ");
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memcpy(cdest+7, csrc, 3);
-	if (strcmp(cdest, "That's rly funny"))
+    ft_memcpy(cdest+6, csrc, 3); // copying str "rly" (3 bytes) into dest
+	if (strcmp(cdest, "Thats rly funny") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -878,8 +890,8 @@ void	test_ft_memcpy()
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memcpy(cdest+9, csrc, 1);
-	if (strcmp(cdest, "That's nor funny"))
+    ft_memcpy(cdest+8, csrc, 1);
+	if (strcmp(cdest, "Thats nor funny") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -889,8 +901,8 @@ void	test_ft_memcpy()
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memcpy(cdest+7, csrc, 4); // Including null-character "rly\0"
-	if (strcmp(cdest, "That's rly"))
+    ft_memcpy(cdest+6, csrc, 4); // Including null-character "rly\0"
+	if (strcmp(cdest, "Thats rly") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -900,8 +912,8 @@ void	test_ft_memcpy()
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memcpy(cdest+7, csrc, 0); // Zero bytes
-	if (strcmp(cdest, "That's not funny"))
+    ft_memcpy(cdest, csrc, 0); // Zero bytes (doesnt even copy)
+	if (strcmp(cdest, "Thats not funny") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -910,8 +922,8 @@ void	test_ft_memcpy()
 	memset(cdest, 0, strlen(cdest));
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "I got everything I wanted 123");
-    ft_memcpy(cdest+8, csrc+26, 3); // Working on a single string
-	if (strcmp(cdest, "I got ev123thing I wanted 123"))
+    ft_memcpy(cdest+8, cdest+26, 3); // Working on a single string (src+dest)
+	if (strcmp(cdest, "I got ev123thing I wanted 123") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -919,8 +931,8 @@ void	test_ft_memcpy()
     printf("Test 6:  ");
 	memset(cdest, 0, strlen(cdest));
 	strcpy(cdest, "A shiny white sphere");
-    ft_memcpy(cdest+8, csrc+2, 5); // Single string
-	if (strcmp(cdest, "A shiny shiny sphere"))
+    ft_memcpy(cdest+8, cdest+2, 5); // Single string
+	if (strcmp(cdest, "A shiny shiny sphere") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -928,25 +940,30 @@ void	test_ft_memcpy()
     printf("Test 7:  ");
 	memset(cdest, 0, strlen(cdest));
 	strcpy(cdest, "Wow! 42 and the caramelo doggy!");
-    ft_memcpy(cdest+17, csrc+5, 2); // Single string
-	if (strcmp(cdest, "Wow! 42 and the c42amero doggy!"))
+    ft_memcpy(cdest+17, cdest+5, 2); // Single string
+	if (strcmp(cdest, "Wow! 42 and the c42amelo doggy!") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
     printf("Test 8:  ");
 	memset(cdest, 0, strlen(cdest));
-	strcpy(cdest, "foo bar baz");
-    if (ft_memcpy(cdest, NULL, 3) == NULL) // Dealing with NULL entries
+	ft_memcpy(cdest, "foo", 4);
+    if (strcmp(cdest, "foo") == 0) // into a empty buffer (dest)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
     printf("Test 9:  ");
-    if (ft_memcpy(NULL, csrc, 3) == NULL) // NULL entry
+	memset(cdest, 0, strlen(cdest));
+	ft_memcpy(cdest, "", 3); // copying ""(0/'\0') into dest
+    if (strcmp(cdest, "") == 0) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// ft_memcpy("", "foo", 4);  // Segfault
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
     printf("Test 10: ");
 	memset(cdest, 0, strlen(cdest));
@@ -967,15 +984,6 @@ void	test_ft_memcpy()
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-    // printf("Test 11: ");
-	// memset(cdest, 0, strlen(cdest));
-	// strcpy(csrc, "If you had a brain it would be dangerous");
-    // ft_memcpy(cdest, csrc, -1); // A -ve value would cause segfault.
-	// if (strcmp(cdest, csrc))
-	// 	printf("OK\n");
-	// else
-	// 	printf("KO\n");
 
 	free(cdest);
 	cdest = NULL;
@@ -1032,8 +1040,8 @@ void	test_ft_memmove()
     printf("Test 1:  ");
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memmove(cdest+7, csrc, 3);
-	if (strcmp(cdest, "That's rly funny"))
+    ft_memmove(cdest+6, csrc, 3);
+	if (strcmp(cdest, "Thats rly funny") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1043,8 +1051,8 @@ void	test_ft_memmove()
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memmove(cdest+9, csrc, 1);
-	if (strcmp(cdest, "That's nor funny"))
+    ft_memmove(cdest+8, csrc, 1);
+	if (strcmp(cdest, "Thats nor funny") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1054,8 +1062,8 @@ void	test_ft_memmove()
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memmove(cdest+7, csrc, 4); // Including null-character "rly\0"
-	if (strcmp(cdest, "That's rly"))
+    ft_memmove(cdest+6, csrc, 4); // Including null-character "rly\0"
+	if (strcmp(cdest, "Thats rly") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1065,8 +1073,8 @@ void	test_ft_memmove()
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "Thats not funny");
 	strcpy(csrc, "rly");
-    ft_memmove(cdest+7, csrc, 0); // Zero bytes
-	if (strcmp(cdest, "That's not funny"))
+    ft_memmove(cdest+6, csrc, 0); // Zero bytes
+	if (strcmp(cdest, "Thats not funny") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1075,8 +1083,8 @@ void	test_ft_memmove()
 	memset(cdest, 0, strlen(cdest));
 	memset(csrc, 0, strlen(csrc));
 	strcpy(cdest, "I got everything I wanted 123");
-    ft_memmove(cdest+8, csrc+26, 3); // Working on a single string
-	if (strcmp(cdest, "I got ev123thing I wanted 123"))
+    ft_memmove(cdest+8, cdest+26, 3); // Working on a single string
+	if (strcmp(cdest, "I got ev123thing I wanted 123") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1084,8 +1092,8 @@ void	test_ft_memmove()
     printf("Test 6:  ");
 	memset(cdest, 0, strlen(cdest));
 	strcpy(cdest, "A shiny white sphere");
-    ft_memmove(cdest+8, csrc+2, 5); // Single string
-	if (strcmp(cdest, "A shiny shiny sphere"))
+    ft_memmove(cdest+8, cdest+2, 5); // Single string
+	if (strcmp(cdest, "A shiny shiny sphere") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1093,32 +1101,35 @@ void	test_ft_memmove()
     printf("Test 7:  ");
 	memset(cdest, 0, strlen(cdest));
 	strcpy(cdest, "Wow! 42 and the caramelo doggy!");
-    ft_memmove(cdest+17, csrc+5, 2); // Single string
-	if (strcmp(cdest, "Wow! 42 and the c42amero doggy!"))
+    ft_memmove(cdest+17, cdest+5, 2); // Single string
+	if (strcmp(cdest, "Wow! 42 and the c42amelo doggy!") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
     printf("Test 8:  ");
 	memset(cdest, 0, strlen(cdest));
-	strcpy(cdest, "foo bar baz");
-    if (ft_memmove(cdest, NULL, 3) == NULL) // Dealing with NULL entries
+	strcpy(cdest, "Lonely");
+    ft_memmove(cdest+1, "", 1); // Copying "" into dest
+	if (strcmp(cdest, "L") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
     printf("Test 9:  ");
-    if (ft_memmove(NULL, csrc, 3) == NULL) // NULL entry
+	memset(cdest, 0, strlen(cdest));
+	strcpy(cdest, "We cant be");
+    ft_memmove(cdest, "foo bar", 0); // Copying 0 bytes
+	if (strcmp(cdest, "We cant be") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
     printf("Test 10: ");
 	memset(cdest, 0, strlen(cdest));
-	strcpy(csrc, "");
-	strcpy(cdest, "Lonely");
-    ft_memmove(cdest+1, csrc, 1); // Copying '\0' into dest
-	if (strcmp(cdest, "L") == 0)
+	strcpy(cdest, "enemy");
+    ft_memmove(cdest, cdest, 10); // src == dest -> dest (no matter what n)
+	if (strcmp(cdest, "enemy") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
@@ -1184,7 +1195,7 @@ void	test_ft_memset()
 
 	char *s = (char *)calloc(30, sizeof(char));
 
-	printf("Test 1:  ");
+	printf("Test 1: ");
 	strcpy(s, "mich@student.42sp.org.br");
 	ft_memset(s, '*', 4);
 	if (strcmp(s, "****@student.42sp.org.br") == 0)
@@ -1192,7 +1203,7 @@ void	test_ft_memset()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2:  ");
+	printf("Test 2: ");
 	memset(s, 0, strlen(s));
 	strcpy(s, "mich@student.42sp.org.br");
 	ft_memset(s, 'F', 0); 		// zero case
@@ -1201,7 +1212,7 @@ void	test_ft_memset()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 3:  ");
+	printf("Test 3: ");
 	memset(s, 0, strlen(s));
 	strcpy(s, "Everything is what if");
 	ft_memset(s+5, '-', 14);
@@ -1210,7 +1221,7 @@ void	test_ft_memset()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4:  ");
+	printf("Test 4: ");
 	memset(s, 0, strlen(s));
 	strcpy(s, "Lonely");
 	ft_memset(s, 'F', 10); // Overwriting 's' size
@@ -1219,7 +1230,7 @@ void	test_ft_memset()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5:  ");
+	printf("Test 5: ");
 	memset(s, 0, strlen(s));
 	ft_memset(s, 'z', 3); // writing on a empty char array
 	if (strcmp(s, "zzz") == 0)
@@ -1227,7 +1238,7 @@ void	test_ft_memset()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 6:  ");
+	printf("Test 6: ");
 	memset(s, 0, strlen(s));
 	strcpy(s, "Lonely");
 	ft_memset(s+1, '\0', 1); // inserting null-char at offset s+1
@@ -1236,19 +1247,7 @@ void	test_ft_memset()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7:  ");
-	memset(s, 0, strlen(s));
-	strcpy(s, "Lonely");
-	if (ft_memset(NULL, '\0', 1) == NULL) // Dealing with NULL entry
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	// memset(s, 0, strlen(s));
-	// strcpy(s, "Lonely");
-	// ft_memset(s, 'F', -1); // -ve entry would cause segfault
-
-	printf("Test 8:  ");
+	printf("Test 7: ");
 	memset(s, 0, strlen(s));
 	strcpy(s, "foo bar baz");
 	ft_memset(s+4, '_', 3);
@@ -1263,7 +1262,7 @@ void	test_ft_memset()
 	int tab[5] = {10, 20, 30, 40, 50};
 	int fail;
 
-	printf("Test 9:  ");
+	printf("Test 8: ");
 	ft_memset(tab+1, 0, 1*sizeof(int));
 	if (tab[1] == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
@@ -1272,7 +1271,7 @@ void	test_ft_memset()
 
 	tab[1] = 40;
 
-	printf("Test 10: ");
+	printf("Test 9: ");
 	ft_memset(tab, 0, 5*sizeof(int));
 	fail = 0;
 	for (int i=0; i < 5; ++i)
@@ -1286,6 +1285,16 @@ void	test_ft_memset()
 	}
 	if (!fail)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	// memset(s, 0, strlen(s));
+	// strcpy(s, "Lonely");
+	// if (ft_memset(NULL, '\0', 1) == NULL) // Dealing with NULL entry
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// strcpy(s, "Lonely");
+	// ft_memset(s, 'F', -1); // -ve entry causes segfault
 }
 
 void	test_ft_bzero()
@@ -1328,17 +1337,12 @@ void	test_ft_bzero()
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 5: ");
-	memset(s, 0, strlen(s));
-	ft_bzero(NULL, 1); // (null) entry
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
 	
 	free(s);
 	s = NULL;
 
 	int tab[3] = {1, 2, 3};
-	printf("Test 6: ");
+	printf("Test 5: ");
 	ft_bzero(tab, 1*sizeof(int)); // set a single integer
 	if(!tab[0] && tab[1] == 2 && tab[2] == 3)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
@@ -1346,12 +1350,17 @@ void	test_ft_bzero()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	tab[0] = 1;
-	printf("Test 7: ");
+	printf("Test 6: ");
 	ft_bzero(tab+1, 2*sizeof(int)); // set multiple integers
 	if(tab[0] == 1 && !tab[1] && !tab[2])
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 5: ");
+	// memset(s, 0, strlen(s));
+	// ft_bzero(NULL, 1); // (null) entry
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
 void	test_ft_strlcpy()
@@ -1361,14 +1370,14 @@ void	test_ft_strlcpy()
 	char *dest = (char *)calloc(30, sizeof(char));
 	char *src  = (char *)calloc(30, sizeof(char));
 
-	printf("Test 1:  ");
+	printf("Test 1: ");
 	strcpy(src, "foo bar"); // copying 4 bytes (copy 3 chars and insert null implicitly)
 	if ((ft_strlcpy(dest, src, 4) == strlen(src)) && (strcmp(dest, "foo") == 0))
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2:  ");
+	printf("Test 2: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(src, "foo bar baz"); // copying strlen(src) bytes
@@ -1377,7 +1386,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 3:  ");
+	printf("Test 3: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(src, "foo bar baz"); // copying strlen(src) + 1 (null) bytes
@@ -1386,7 +1395,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4:  ");
+	printf("Test 4: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(src, "foo bar baz"); // Copying 0 bytes should just return strlen(src), and not copy
@@ -1395,7 +1404,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5:  ");
+	printf("Test 5: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(src, "I need change"); // Passing -ve value
@@ -1404,7 +1413,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 6:  ");
+	printf("Test 6: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(src, ""); // src being ""
@@ -1413,7 +1422,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7:  ");
+	printf("Test 7: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(src, "End of\0 decade"); // catching a null while copying
@@ -1422,25 +1431,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 8:  ");
-	memset(src, 0, strlen(src));
-	memset(dest, 0, strlen(dest));
-	strcpy(src, "NO NAME"); // NULL entry
-	if ((ft_strlcpy(NULL, src, strlen(src)+1) == 0) && (strcmp(dest, "") == 0))
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 9:  ");
-	memset(src, 0, strlen(src));
-	memset(dest, 0, strlen(dest));
-	strcpy(src, "Nothing happens"); // NULL entry
-	if ((ft_strlcpy(dest, NULL, strlen(src)+1) == 0) && (strcmp(dest, "") == 0))
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 10: ");
+	printf("Test 8: ");
 	memset(src, 0, strlen(src));  // no 'dest' buffer anymore
 	strcpy(src, "foobar baz123"); // overlaping (we should lose data hereee boyyzzzz)
 	if ((ft_strlcpy(src+3, src, 7) == strlen(src)) && (strcmp(src, "foofoofoo") == 0))
@@ -1448,7 +1439,7 @@ void	test_ft_strlcpy()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 11: ");
+	printf("Test 9: ");
 	memset(src, 0, strlen(src));
 	strcpy(src, "Appreciate my art");
 	strcpy(dest, "What a tree");
@@ -1461,6 +1452,22 @@ void	test_ft_strlcpy()
 	dest = NULL;
 	free(src);
 	src = NULL;
+
+	// memset(src, 0, strlen(src));
+	// memset(dest, 0, strlen(dest));
+	// strcpy(src, "NO NAME"); // NULL entry
+	// if ((ft_strlcpy(NULL, src, strlen(src)+1) == 0) && (strcmp(dest, "") == 0))
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// memset(src, 0, strlen(src));
+	// memset(dest, 0, strlen(dest));
+	// strcpy(src, "Nothing happens"); // NULL entry
+	// if ((ft_strlcpy(dest, NULL, strlen(src)+1) == 0) && (strcmp(dest, "") == 0))
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_strlcat()
@@ -1561,26 +1568,6 @@ void	test_ft_strlcat()
 	printf("Test 10: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
-	strcpy(dest, "Rap game");
-	strcpy(src, "baz"); // NULL entry
-	if ((ft_strlcat(NULL, src, 42) == 0) && (strcmp(dest, "Rap game") == 0))
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 11: ");
-	memset(src, 0, strlen(src));
-	memset(dest, 0, strlen(dest));
-	strcpy(dest, "Rap game");
-	strcpy(src, "baz"); // NULL entry
-	if ((ft_strlcat(dest, NULL, 42) == 0) && (strcmp(dest, "Rap game") == 0))
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 12: ");
-	memset(src, 0, strlen(src));
-	memset(dest, 0, strlen(dest));
 	strcpy(dest, "foo"); // appending null at dest
 	strcpy(src, "");
 	if ((ft_strlcat(dest, src, 5) == strlen(src)+3) && (strcmp(dest, "foo") == 0))
@@ -1588,7 +1575,7 @@ void	test_ft_strlcat()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 13: ");
+	printf("Test 11: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(dest, "");
@@ -1598,7 +1585,7 @@ void	test_ft_strlcat()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 14: ");
+	printf("Test 12: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(dest, "");
@@ -1608,7 +1595,7 @@ void	test_ft_strlcat()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 15: ");
+	printf("Test 13: ");
 	memset(src, 0, strlen(src));
 	memset(dest, 0, strlen(dest));
 	strcpy(dest, "");
@@ -1622,6 +1609,25 @@ void	test_ft_strlcat()
 	dest = NULL;
 	free(src);
 	src = NULL;
+
+	// memset(src, 0, strlen(src));
+	// memset(dest, 0, strlen(dest));
+	// strcpy(dest, "Rap game");
+	// strcpy(src, "baz"); // NULL entry
+	// if ((ft_strlcat(NULL, src, 42) == 0) && (strcmp(dest, "Rap game") == 0))
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// memset(src, 0, strlen(src));
+	// memset(dest, 0, strlen(dest));
+	// strcpy(dest, "Rap game");
+	// strcpy(src, "baz"); // NULL entry
+	// if ((ft_strlcat(dest, NULL, 42) == 0) && (strcmp(dest, "Rap game") == 0))
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
 }
 
 void	test_ft_strnstr()
@@ -1675,24 +1681,6 @@ void	test_ft_strnstr()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 6:  ");
-	memset(s, 0, strlen(s)); // NULL entry
-	strcpy(s, "foo bar baz");
-	p = ft_strnstr(NULL, "bar", strlen(s));
-	if (!p)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 7:  ");
-	memset(s, 0, strlen(s)); // NULL entry
-	strcpy(s, "foo bar baz");
-	p = ft_strnstr(s, NULL, strlen(s));
-	if (!p)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 8:  ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "foo bar baz");
 	p = ft_strnstr(s, "", strlen(s));
@@ -1701,7 +1689,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9:  ");
+	printf("Test 7:  ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "foo bar baz");
 	p = ft_strnstr(s, "b", 3);
@@ -1710,7 +1698,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 10: ");
+	printf("Test 8:  ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "foo bar baz");
 	p = ft_strnstr(s+5, "b", strlen(s));
@@ -1719,7 +1707,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 11: ");
+	printf("Test 9:  ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "foo bar baz");
 	p = ft_strnstr(s, "b", 5);
@@ -1728,7 +1716,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 12: ");
+	printf("Test 10: ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "foo bar baz");
 	p = ft_strnstr(s, "foo", 0);
@@ -1737,7 +1725,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 13: ");
+	printf("Test 11: ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "underground");
 	p = ft_strnstr(s, "XyZ", 100);
@@ -1746,7 +1734,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 14: ");
+	printf("Test 12: ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "lorem ipsum dolor sit amet");
 	p = ft_strnstr(s, "ipsummm", 30);
@@ -1755,7 +1743,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 15: ");
+	printf("Test 13: ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "rabbit run"); // strlen(little) > strlen(big)
 	p = ft_strnstr(s, "Please forgive me", 30); 
@@ -1764,7 +1752,7 @@ void	test_ft_strnstr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 16: ");
+	printf("Test 14: ");
 	memset(s, 0, strlen(s)); 
 	strcpy(s, "rabbit run");
 	p = ft_strnstr(s, "rabbit", 3);  // len < strlen(little)
@@ -1775,6 +1763,22 @@ void	test_ft_strnstr()
 
 	free(s);
 	s = NULL;
+
+	// memset(s, 0, strlen(s)); // NULL entry
+	// strcpy(s, "foo bar baz");
+	// p = ft_strnstr(NULL, "bar", strlen(s));
+	// if (!p)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// memset(s, 0, strlen(s)); // NULL entry
+	// strcpy(s, "foo bar baz");
+	// p = ft_strnstr(s, NULL, strlen(s));
+	// if (!p)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_atoi()
@@ -1806,108 +1810,102 @@ void	test_ft_atoi()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	printf("Test 5:  ");
-	if (ft_atoi(NULL) == 0) 
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 6:  ");
 	if (ft_atoi("123") == 123) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7:  ");
+	printf("Test 6:  ");
 	if (ft_atoi("-123") == -123) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 8:  ");
+	printf("Test 7:  ");
 	if (ft_atoi("+123") == 123) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9:  ");
+	printf("Test 8:  ");
 	if (ft_atoi("++123") == 0) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 10: ");
+	printf("Test 9:  ");
 	if (ft_atoi("+-123") == 0) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 11: ");
+	printf("Test 10: ");
 	if (ft_atoi("-+123") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 12: ");
+	printf("Test 11: ");
 	if (ft_atoi("--123") == 0) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 13: ");
+	printf("Test 12: ");
 	if (ft_atoi("42foo1234") == 42) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 14: ");
+	printf("Test 13: ");
 	if (ft_atoi("123_42") == 123) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 15: ");
+	printf("Test 14: ");
 	if (ft_atoi("-42,10") == -42)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 16: ");
+	printf("Test 15: ");
 	if (ft_atoi("F1") == 0) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 17: ");
+	printf("Test 16: ");
 	if (ft_atoi("\t123") == 123) 
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 18: ");
+	printf("Test 17: ");
 	if (ft_atoi(" 123") == 123)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 19: ");
+	printf("Test 18: ");
 	if (ft_atoi(" \t\t  \t123") == 123)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 20: ");
+	printf("Test 19: ");
 	if (ft_atoi("2147483647") == 2147483647)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 21: ");
+	printf("Test 20: ");
 	if (ft_atoi("2147483648") == -2147483648)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 22: ");
+	printf("Test 21: ");
 	if (ft_atoi("-2147483648") == -2147483648)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
@@ -1919,6 +1917,10 @@ void	test_ft_atoi()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
+	// if (ft_atoi(NULL) == 0) 
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_calloc()
@@ -1951,7 +1953,7 @@ void	test_ft_calloc()
 	{ // cant assign (10 * 4), isnt filling properly the 0's
 		if (p_int[i] != 0)
 		{
-				printf("\x1b[38:5:9mKO\x1b[0m\n");
+			printf("\x1b[38:5:9mKO\x1b[0m\n");
 			fail = 1;
 			break ;
 		}
@@ -1969,7 +1971,7 @@ void	test_ft_calloc()
 	{
 		if (p_int[i] != 0)
 		{
-				printf("\x1b[38:5:9mKO\x1b[0m\n");
+			printf("\x1b[38:5:9mKO\x1b[0m\n");
 			fail = 1;
 			break ;
 		}
@@ -1992,7 +1994,7 @@ void	test_ft_calloc()
 	{
 		if (p_char[i] != 0)	
 		{
-				printf("\x1b[38:5:9mKO\x1b[0m\n");
+			printf("\x1b[38:5:9mKO\x1b[0m\n");
 			fail = 1;
 			break ;
 		}
@@ -2009,7 +2011,7 @@ void	test_ft_calloc()
 	{
 		if (p_char[i] != 0)	
 		{
-				printf("\x1b[38:5:9mKO\x1b[0m\n");
+			printf("\x1b[38:5:9mKO\x1b[0m\n");
 			fail = 1;
 			break ;
 		}
@@ -2027,13 +2029,6 @@ void	test_ft_strdup()
     char    *p = NULL;
 
 	printf("Test 1: ");
-	p = ft_strdup(NULL);
-	if (!p)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 2: ");
 	char str[100] = "Lose yourself";
 	p = ft_strdup(str);
 	if (strcmp(p, str) == 0 && p != str)
@@ -2041,7 +2036,7 @@ void	test_ft_strdup()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 3: ");
+	printf("Test 2: ");
 	strcpy(str, "Running \tfrom  change");
 	p = ft_strdup(str);
 	if (strcmp(str, p) == 0 && p != str)
@@ -2049,7 +2044,7 @@ void	test_ft_strdup()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4: ");
+	printf("Test 3: ");
 	strcpy(str, "");
 	p = ft_strdup(str);
 	if (strcmp(str, p) == 0 && p != str)
@@ -2057,7 +2052,7 @@ void	test_ft_strdup()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: ");
+	printf("Test 4: ");
 	strcpy(str, "Leaving\0 heaven");
 	p = ft_strdup(str);
 	if (strcmp(str, p) == 0 && p != str)
@@ -2067,6 +2062,12 @@ void	test_ft_strdup()
 
 	free(p);
 	p = NULL;
+
+	// p = ft_strdup(NULL);
+	// if (!p)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_substr()
@@ -2076,7 +2077,7 @@ void	test_ft_substr()
 	char	*orig = (char *)calloc(50, sizeof(char));
 	char	*str;
 
-	printf("Test 1:  "); // getting first 3 bytes from string (big)
+	printf("Test 1: "); // getting first 3 bytes from string (big)
 	strcpy(orig, "foobar baz");
 	str = ft_substr(orig, 0, 3);
 	if (strcmp(str, "foo") == 0)
@@ -2084,41 +2085,36 @@ void	test_ft_substr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2:  "); // getting 3 middle bytes from string (big)
+	printf("Test 2: "); // getting 3 middle bytes from string (big)
 	str = ft_substr(orig, 3, 3);
 	if (strcmp(str, "bar") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 3:  "); // getting last 3 bytes from string (big)
+	printf("Test 3: "); // getting last 3 bytes from string (big)
 	str = ft_substr(orig, 7, 3);
 	if (strcmp(str, "baz") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 4:  "); // NULL entry to string (big)
-	if (ft_substr(NULL, 0, 6) == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5:  "); // getting 6 bytes
+	printf("Test 4: "); // getting 6 bytes
 	str = ft_substr(orig, 0, 6);
 	if (strcmp(str, "foobar") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 6:  "); // jumps over the null-char to get substr 
+	printf("Test 5: "); // jumps over the null-char to get substr 
 	char orig2[] = "Say \0goodbye";
-	if (ft_substr(orig2, 5, 4) == NULL) 	// strcmp(str, "good")
+	if (strcmp(ft_substr(orig2, 5, 4), "") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7:  "); // getting 1st char only
+	printf("Test 6: "); // getting 1st char only
 	memset(orig, 0, strlen(orig));
 	strcpy(orig, "Sing for the moment");
 	str = ft_substr(orig, 0, 1);
@@ -2127,29 +2123,35 @@ void	test_ft_substr()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 8:  "); // getting last char only
+	printf("Test 7: "); // getting last char only
 	str = ft_substr(orig, 18, 1);
 	if (strcmp(str, "t") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9:  "); // a -ve offset would segfault 
-	if (ft_substr(orig, -1, 3) == NULL)
+	printf("Test 8: "); // a -ve offset would segfault 
+	if (strcmp(ft_substr(orig, -1, 3), "") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 10: ");
+	printf("Test 9: ");
 	memset(orig, 0, strlen(orig));
 	strcpy(orig, "intro 2");
-	if (ft_substr(orig, 400, 20) == NULL)
+	if (strcmp(ft_substr(orig, 400, 20), "") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
 	free(orig);
 	orig = NULL;
+
+	// printf("Test 4:  "); // NULL entry to string (big)
+	// if (ft_substr(NULL, 0, 6) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_strjoin()
@@ -2194,22 +2196,6 @@ void	test_ft_strjoin()
 	printf("Test 4: ");
 	memset(s1, 0, strlen(s1));
 	memset(s2, 0, strlen(s2));
-	strcpy(s1, "Thousand ");
-	strcpy(s2, "lies");
-	if (ft_strjoin(s1, NULL) == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 5: ");
-	if (ft_strjoin(NULL, s2) == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 6: ");
-	memset(s1, 0, strlen(s1));
-	memset(s2, 0, strlen(s2));
 	strcpy(s1, "Savior");
 	strcpy(s2, "");
 	p = ft_strjoin(s1, s2);
@@ -2218,7 +2204,7 @@ void	test_ft_strjoin()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 7: ");
+	printf("Test 5: ");
 	memset(s1, 0, strlen(s1));
 	memset(s2, 0, strlen(s2));
 	strcpy(s1, "");
@@ -2229,7 +2215,7 @@ void	test_ft_strjoin()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 8: ");
+	printf("Test 6: ");
 	memset(s1, 0, strlen(s1));
 	memset(s2, 0, strlen(s2));
 	strcpy(s1, "");
@@ -2244,6 +2230,22 @@ void	test_ft_strjoin()
 	s1 = NULL;
 	free(s2);
 	s2 = NULL;
+
+	// printf("Test 4: ");
+	// memset(s1, 0, strlen(s1));
+	// memset(s2, 0, strlen(s2));
+	// strcpy(s1, "Thousand ");
+	// strcpy(s2, "lies");
+	// if (ft_strjoin(s1, NULL) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 5: ");
+	// if (ft_strjoin(NULL, s2) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_strtrim()
@@ -2319,21 +2321,7 @@ void	test_ft_strtrim()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9:  "); // NULL entry
-	memset(str, 0, strlen(str));
-	strcpy(str, "foo bar");
-	if (ft_strtrim(NULL, "f") == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 10: "); // same
-	if (ft_strtrim(str, NULL) == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 11: ");
+	printf("Test 9:  ");
 	memset(str, 0, strlen(str));
 	strcpy(str, "zzzzzzzzzzzWzAKEzzzUpzPzzz");
 	p = ft_strtrim(str, "zP");
@@ -2342,7 +2330,7 @@ void	test_ft_strtrim()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 12: ");
+	printf("Test 10: ");
 	memset(str, 0, strlen(str));
 	strcpy(str, "fffffz");
 	p = ft_strtrim(str, "f");
@@ -2351,7 +2339,7 @@ void	test_ft_strtrim()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 13: ");
+	printf("Test 11: ");
 	memset(str, 0, strlen(str));
 	strcpy(str, "zfffff");
 	p = ft_strtrim(str, "f");
@@ -2360,7 +2348,7 @@ void	test_ft_strtrim()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 14: "); // trimming all string
+	printf("Test 12: "); // trimming all string
 	memset(str, 0, strlen(str));
 	strcpy(str, "xxz");
 	p = ft_strtrim(str, "xz");
@@ -2371,6 +2359,20 @@ void	test_ft_strtrim()
 
 	free(str);
 	str = NULL;
+
+	// printf("Test 9:  "); // NULL entry
+	// memset(str, 0, strlen(str));
+	// strcpy(str, "foo bar");
+	// if (ft_strtrim(NULL, "f") == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 10: "); // same
+	// if (ft_strtrim(str, NULL) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_split()
@@ -2493,13 +2495,6 @@ void	test_ft_split()
 	tab = NULL;
 
 	printf("Test 9:  ");
-	fail = 0;
-	if (ft_split(NULL, '.') == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 10: ");
 	char	*I[6] = {"f", "o", "o ba", "r", " b az", 0};
 	fail = 0;
 	tab = ft_split("f.o.o ba.r. b az", '.');
@@ -2511,7 +2506,7 @@ void	test_ft_split()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 11: ");
+	printf("Test 10: ");
 	char	*J[2] = {"foo bar", 0};
 	fail = 0;
 	tab = ft_split("foo bar", 'z');
@@ -2523,7 +2518,7 @@ void	test_ft_split()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 12: ");
+	printf("Test 11: ");
 	char	*K[2] = {"", 0};
 	fail = 0;
 	tab = ft_split("", 'F');
@@ -2537,6 +2532,13 @@ void	test_ft_split()
 
 	free(tab);
 	tab = NULL;
+
+	// printf("Test 9:  ");
+	// fail = 0;
+	// if (ft_split(NULL, '.') == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 }
 
 void	test_ft_itoa()
@@ -2695,26 +2697,26 @@ void	test_ft_strmapi()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
+	// printf("Test 6: ");
+	// if (ft_strmapi(NULL, f1) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
+	// printf("Test 7: ");
+	// if (ft_strmapi("abc", NULL) == NULL)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
+
 	printf("Test 6: ");
-	if (ft_strmapi(NULL, f1) == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 7: ");
-	if (ft_strmapi("abc", NULL) == NULL)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
-
-	printf("Test 8: ");
 	p = ft_strmapi("1234", f2);
 	if (strcmp(p, "1357") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 9: ");
+	printf("Test 7: ");
 	p = ft_strmapi("-1234", f2);
 	if (strcmp(p, "-2468") == 0)
 		printf("\x1b[38:5:10mOK\x1b[0m\n");
@@ -2793,13 +2795,13 @@ void	test_ft_striteri()
 	free(str);
 	str = NULL;
 
-	printf("Test 7: ");
-	ft_striteri(NULL, f2);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 7: ");
+	// ft_striteri(NULL, f2);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 8: ");
-	ft_striteri("Fly away with me", NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 8: ");
+	// ft_striteri("Fly away with me", NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
 void	test_ft_putchar_fd()
@@ -2916,11 +2918,11 @@ void	test_ft_putstr_fd()
 	memset(buff, 0, strlen(buff));
 	memset(str, 0, strlen(str));
 
-	printf("Test 4: ");
-	ft_putstr_fd(NULL, fd);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 4: ");
+	// ft_putstr_fd(NULL, fd);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 5: ");
+	printf("Test 4: ");
 	ft_putstr_fd(str, -1);
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
@@ -2980,13 +2982,13 @@ void	test_ft_putendl_fd()
 	memset(buff, 0, strlen(buff));
 	memset(str, 0, strlen(str));
 
-	printf("Test 4: "); // NULL entry
-	ft_putendl_fd(NULL, fd);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
-	memset(buff, 0, strlen(buff));
-	memset(str, 0, strlen(str));
+	// printf("Test 4: "); // NULL entry
+	// ft_putendl_fd(NULL, fd);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// memset(buff, 0, strlen(buff));
+	// memset(str, 0, strlen(str));
 
-	printf("Test 5: "); // -ve fd
+	printf("Test 4: "); // -ve fd
 	ft_putendl_fd(str, -1);
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
 	memset(buff, 0, strlen(buff));
