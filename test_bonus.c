@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/23 21:06:10 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:25:58 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1930,23 +1930,23 @@ void	test_ft_calloc()
 	int		*p_int = NULL;
 	int		fail;
 
-	printf("Test 1: ");
+	// printf("Test 1: ");
 	// if 'nmemb' or size is  0, then calloc() returns either NULL, or a unique pointer value that can later be
 	// successfully passed to free()
-	p_int = (int *)ft_calloc(0, sizeof(int));
-	if (!p_int || p_int[0] == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	// p_int = (int *)ft_calloc(0, sizeof(int));
+	// if (!p_int || p_int[0] == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2: ");
-	p_int = (int *)ft_calloc(5, 0); 
-	if (!p_int || p_int[0] == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n"); // size being 0, returns (null)
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	// printf("Test 2: ");
+	// p_int = (int *)ft_calloc(5, 0); 
+	// if (!p_int || p_int[0] == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n"); // size being 0, returns (null)
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 3: "); 
+	printf("Test 1: "); 
 	fail = 0;
 	p_int = (int *)ft_calloc(15, sizeof(int));
 	for (int i=0; i < 15; ++i)
@@ -1964,7 +1964,7 @@ void	test_ft_calloc()
 	free(p_int);
 	p_int = NULL;
 
-	printf("Test 4: "); 
+	printf("Test 2: "); 
 	fail = 0;
 	p_int = (int *)ft_calloc(50, sizeof(int));
 	for (int i=0; i < 50; ++i)
@@ -1987,7 +1987,7 @@ void	test_ft_calloc()
 	// 	  ft_calloc(-1, 2) ==>  malloc(992394828217348912 * 2) = 💥💥 random access
 
 	char	*p_char;
-	printf("Test 5: "); 
+	printf("Test 3: "); 
 	fail = 0;
 	p_char = (char *)ft_calloc(20, sizeof(char));
 	for (int i=0; i < 20; ++i)
@@ -2004,7 +2004,7 @@ void	test_ft_calloc()
 	free(p_char);
 	p_char = NULL;
 
-	printf("Test 6: "); 
+	printf("Test 4: "); 
 	fail = 0;
 	p_char = (char *)ft_calloc(100, sizeof(char));
 	for (int i=0; i < 100; ++i)
@@ -3171,15 +3171,15 @@ void	test_ft_lstadd_front()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	free(lst);
 
+	// printf("Test 2: ");
+	// ft_lstadd_front(NULL, ft_lstnew("foo bar"));
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	// printf("Test 3: ");
+	// ft_lstadd_front(&lst, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
+
 	printf("Test 2: ");
-	ft_lstadd_front(NULL, ft_lstnew("foo bar"));
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
-
-	printf("Test 3: ");
-	ft_lstadd_front(&lst, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
-
-	printf("Test 4: ");
 	t_list	*nlst1 = NULL;
 	ft_lstadd_front(&nlst1, ft_lstnew(NULL));
 	if (nlst1)
@@ -3187,7 +3187,7 @@ void	test_ft_lstadd_front()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: ");
+	printf("Test 3: ");
 	t_list	*nlst2 = NULL;
 	ft_lstadd_front(&nlst2, ft_lstnew("book of rhymes"));
 	if (nlst2 && strcmp((char *)nlst2->content, "book of rhymes") == 0)
@@ -3301,15 +3301,15 @@ void	test_ft_lstadd_back()
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	free(lst);
 
+	// printf("Test 2: ");
+	// ft_lstadd_back(NULL, ft_lstnew("foo bar"));
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
+
+	// printf("Test 3: ");
+	// ft_lstadd_back(&lst, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
+
 	printf("Test 2: ");
-	ft_lstadd_back(NULL, ft_lstnew("foo bar"));
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
-
-	printf("Test 3: ");
-	ft_lstadd_back(&lst, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
-
-	printf("Test 4: ");
 	t_list	*nlst1 = NULL;
 	ft_lstadd_back(&nlst1, ft_lstnew(NULL));
 	if (nlst1)
@@ -3317,7 +3317,7 @@ void	test_ft_lstadd_back()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 5: ");
+	printf("Test 3: ");
 	t_list	*nlst2 = NULL;
 	ft_lstadd_back(&nlst2, ft_lstnew("book of rhymes"));
 	if (nlst2 && strcmp((char *)nlst2->content, "book of rhymes") == 0)
@@ -3364,13 +3364,13 @@ void	test_ft_lstdelone()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2: ");
-	ft_lstdelone(n1, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 2: ");
+	// ft_lstdelone(n1, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 3: ");
-	ft_lstdelone(NULL, free);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 3: ");
+	// ft_lstdelone(NULL, free);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
 void	test_ft_lstclear()
@@ -3405,17 +3405,17 @@ void	test_ft_lstclear()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 3: ");
-	ft_lstclear(NULL, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 3: ");
+	// ft_lstclear(NULL, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 4: ");
-	ft_lstclear(&lst, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 4: ");
+	// ft_lstclear(&lst, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 5: ");
-	ft_lstclear(NULL, free);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 5: ");
+	// ft_lstclear(NULL, free);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 }
 
 // ft_lstiter Test functions
@@ -3489,13 +3489,13 @@ void	test_ft_lstiter()
 	ft_lstiter(NULL, NULL);
 	printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 4: ");
-	ft_lstiter(lst1, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 4: ");
+	// ft_lstiter(lst1, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 5: ");
-	ft_lstiter(NULL, free);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 5: ");
+	// ft_lstiter(NULL, free);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	ft_lstclear(&lst1, free);
 	ft_lstclear(&lst2, free);
@@ -3531,17 +3531,17 @@ void	test_ft_lstmap()
 	else
 		printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 2: ");
-	ft_lstmap(NULL, __ft_sz, free);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 2: ");
+	// ft_lstmap(NULL, __ft_sz, free);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 3: ");
-	ft_lstmap(lst, NULL, free);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 3: ");
+	// ft_lstmap(lst, NULL, free);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
-	printf("Test 4: ");
-	ft_lstmap(lst, __ft_sz, NULL);
-	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// printf("Test 4: ");
+	// ft_lstmap(lst, __ft_sz, NULL);
+	// printf("\x1b[38:5:10mOK\x1b[0m\n");
 
 	ft_lstclear(&lst, free);
 	ft_lstclear(&newlst, free);

@@ -6,7 +6,7 @@
 /*   By: frosa-ma <frosa-ma@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 17:28:17 by frosa-ma          #+#    #+#             */
-/*   Updated: 2022/04/23 21:28:26 by frosa-ma         ###   ########.fr       */
+/*   Updated: 2022/04/27 14:27:02 by frosa-ma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1930,23 +1930,23 @@ void	test_ft_calloc()
 	int		*p_int = NULL;
 	int		fail;
 
-	printf("Test 1: ");
-	// if 'nmemb' or size is  0, then calloc() returns either NULL, or a unique pointer value that can later be
-	// successfully passed to free()
-	p_int = (int *)ft_calloc(0, sizeof(int));
-	if (!p_int || p_int[0] == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n");
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	// printf("Test 1: ");
+	// // if 'nmemb' or size is  0, then calloc() returns either NULL, or a unique pointer value that can later be
+	// // successfully passed to free()
+	// p_int = (int *)ft_calloc(0, sizeof(int));
+	// if (!p_int || p_int[0] == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n");
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 
-	printf("Test 2: ");
-	p_int = (int *)ft_calloc(5, 0); 
-	if (!p_int || p_int[0] == 0)
-		printf("\x1b[38:5:10mOK\x1b[0m\n"); // size being 0, returns (null)
-	else
-		printf("\x1b[38:5:9mKO\x1b[0m\n");
+	// printf("Test 2: ");
+	// p_int = (int *)ft_calloc(5, 0); 
+	// if (!p_int || p_int[0] == 0)
+	// 	printf("\x1b[38:5:10mOK\x1b[0m\n"); // size being 0, returns (null)
+	// else
+	// 	printf("\x1b[38:5:9mKO\x1b[0m\n");
 	
-	printf("Test 3: "); 
+	printf("Test 1: "); 
 	fail = 0;
 	p_int = (int *)ft_calloc(15, sizeof(int));
 	for (int i=0; i < 15; ++i)
@@ -1964,7 +1964,7 @@ void	test_ft_calloc()
 	free(p_int);
 	p_int = NULL;
 
-	printf("Test 4: "); 
+	printf("Test 2: "); 
 	fail = 0;
 	p_int = (int *)ft_calloc(50, sizeof(int));
 	for (int i=0; i < 50; ++i)
@@ -1987,7 +1987,7 @@ void	test_ft_calloc()
 	// 	  ft_calloc(-1, 2) ==>  malloc(992394828217348912 * 2) = 💥💥 random access
 
 	char	*p_char;
-	printf("Test 5: "); 
+	printf("Test 3: "); 
 	fail = 0;
 	p_char = (char *)ft_calloc(20, sizeof(char));
 	for (int i=0; i < 20; ++i)
@@ -2004,7 +2004,7 @@ void	test_ft_calloc()
 	free(p_char);
 	p_char = NULL;
 
-	printf("Test 6: "); 
+	printf("Test 4: "); 
 	fail = 0;
 	p_char = (char *)ft_calloc(100, sizeof(char));
 	for (int i=0; i < 100; ++i)
